@@ -44,8 +44,22 @@ define(function( require )
 	var ChatBoxSettings  = require('UI/Components/ChatBoxSettings/ChatBoxSettings');
 	var StatusConst        = require('DB/Status/StatusState');
 
-	if(Configs.get('enableCheckAttendance') && PACKETVER.value >= 20180307) {
-		var CheckAttendance  = require('UI/Components/CheckAttendance/CheckAttendance');
+	if (Configs !== undefined) {
+		if (Configs.isDoneLoading() === true) {
+			console.log("Configs is loaded.");
+		} else {
+			console.log("Configs is STILL LOADING!!!");
+		}
+	} else {
+		console.log("Configs is undefined!!!");
+	}
+
+	if(Configs.get('enableCheckAttendance')) {
+		if (PACKETVER.value >= 20180307) {
+			var CheckAttendance  = require('UI/Components/CheckAttendance/CheckAttendance');
+		}
+	} else {
+		console.log("Configs.get() returned false for enableCheckAttendance.");
 	}
 
 	var WinStats         = require('UI/Components/WinStats/WinStats');
@@ -76,6 +90,8 @@ define(function( require )
 	var HomunInformations= require('UI/Components/HomunInformations/HomunInformations');
 	if(Configs.get('enableMapName')){
 		var MapName          = require('UI/Components/MapName/MapName');
+	} else {
+		console.log("Configs.get() returned false for enableMapName.");
 	}
 	var PluginManager    = require('Plugins/PluginManager');
 
@@ -277,6 +293,7 @@ define(function( require )
 			RodexIcon.prepare();
 
 			if(Configs.get('enableMapName')){
+				console.log("Configs.get() returned true for enableMapName.");
 				MapName.prepare();
 			}
 
@@ -303,6 +320,7 @@ define(function( require )
 			}
 
 			if(Configs.get('enableCheckAttendance') && PACKETVER.value >= 20180307) {
+				console.log("Configs.get() returned true for enableCheckAttendance.");
 				CheckAttendance.prepare();
 			}
 

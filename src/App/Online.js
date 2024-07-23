@@ -30,9 +30,15 @@ require( {
 		jquery: 'Vendors/jquery-1.9.1'
 	}
 },
-	['Engine/GameEngine', 'Core/Context', 'Plugins/PluginManager'],
-	function(GameEngine,        Context,           Plugins) {
+	['Core/Configs', 'Engine/GameEngine', 'Core/Context', 'Plugins/PluginManager'],
+	function(Configs,        GameEngine,        Context,           Plugins) {
 		'use strict';
+
+		if (Configs.isDoneLoading()) {
+			console.log("Configs has loaded before Plugins.init().");
+		} else {
+			console.log("Configs is STILL LOADING before Plugins.init()!!!!");
+		}
 
 		Plugins.init();
 		GameEngine.init();

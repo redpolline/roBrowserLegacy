@@ -24,6 +24,7 @@ define(function()
 	 */
 	var _server = {};
 
+	var _init_done = false;
 
 	/**
 	 * Constructor
@@ -41,6 +42,8 @@ define(function()
 		for (i = 0, count = keys.length; i < count; ++i) {
 			set( keys[i], configs[keys[i]]);
 		}
+
+		_init_done = true;
 	})(window.ROConfig);
 
 
@@ -98,7 +101,10 @@ define(function()
 		return _server;
 	}
 
-
+	function isDoneLoading()
+	{
+		return _init_done;
+	}
 
 	/**
 	 * Export
@@ -107,6 +113,7 @@ define(function()
 		get:       get,
 		set:       set,
 		setServer: setServer,
-		getServer: getServer
+		getServer: getServer,
+		isDoneLoading: isDoneLoading
 	};
 });

@@ -83,12 +83,14 @@ define(function( require )
 	if(Configs.get('enableMapName')){
 		var MapName          = require('UI/Components/MapName/MapName');
 	}
+
 	var PluginManager    = require('Plugins/PluginManager');
 
 	var UIVersionManager      = require('UI/UIVersionManager');
 	// Version Dependent UIs
 	var BasicInfo = require('UI/Components/BasicInfo/BasicInfo');
 	var MiniMap   = require('UI/Components/MiniMap/MiniMap');
+	var NavigationUI        = require('UI/Components/NavigationUI/NavigationUI');
 	var SkillList = require('UI/Components/SkillList/SkillList');
 	var Quest     = require('UI/Components/Quest/Quest');
 	var PlayerViewEquip     = require('UI/Components/PlayerViewEquip/PlayerViewEquip');
@@ -195,6 +197,7 @@ define(function( require )
 				BasicInfo.selectUIVersion();
 			}
 			MiniMap.selectUIVersion();
+			NavigationUI.selectUIVersion();
 			SkillList.selectUIVersion();
 			Quest.selectUIVersion();
 			Equipment.selectUIVersion();
@@ -349,6 +352,7 @@ define(function( require )
 			Equipment.getUI().prepare();
 			Quest.getUI().prepare();
 			WinStats.getUI().prepare();
+			NavigationUI.getUI().prepare();
 
 			// Bind UIs
 			// nothing yet
@@ -636,6 +640,7 @@ define(function( require )
 			WorldMap.append();
 			SkillListMER.append();
 			MobileUI.append();
+			NavigationUI.getUI().append();
 
 			if (PACKETVER.value >= 20090617 && PACKETVER.value < 20140521) {
 				WinStats.getUI().append(Equipment.getUI().ui.find('.status_component'));

@@ -35,6 +35,7 @@ define(function(require)
 	var CheckAttendance    = require('UI/Components/CheckAttendance/CheckAttendance');
 	var Rodex              = require('UI/Components/Rodex/Rodex');
 	var WinStats           = require('UI/Components/WinStats/WinStats');
+	var NavigationUI       = require('UI/Components/NavigationUI/NavigationUI');
 
 	// Version Dependent UIs
 	var SkillList = require('UI/Components/SkillList/SkillList');
@@ -140,6 +141,9 @@ define(function(require)
 				case 'mail':
 					Rodex.toggle();
 					break;
+				case 'navigation':
+					NavigationUI.getUI().toggle();
+					break;
 			}
 		});
 
@@ -185,7 +189,6 @@ define(function(require)
 		}
 
 		this.ui.find('#battle').hide();
-		this.ui.find('#navigation').hide();
 		this.ui.find('#battle').hide();
 		this.ui.find('#replay').hide();
 		this.ui.find('#achievment').hide();

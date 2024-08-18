@@ -26,6 +26,7 @@ define(function( require )
 	var Context     = require('Core/Context');
 	var LoginEngine = require('Engine/LoginEngine');
 	var Network     = require('Network/NetworkManager');
+	var PACKETVER   = require('Network/PacketVerManager');
 	var Renderer    = require('Renderer/Renderer');
 	var MapRenderer = require('Renderer/MapRenderer');
 	var UIManager   = require('UI/UIManager');
@@ -238,22 +239,26 @@ define(function( require )
 		Sound.play('\xB9\xF6\xC6\xB0\xBC\xD2\xB8\xAE.wav');
 
 		// Check if the selected server is different than the previous one.
-		if (_previous_server !== undefined &&
-		(_previous_server.address != _servers[index].address ||
-		 _previous_server.port != _servers[index].port)) {
-			UIManager.removeComponents();
-			Network.close();
+		if (_previous_server !== undefined) {
+			if (_previous_server.renewal != _servers[index].renewal) {
+				PACKETVER.setRenewal(_servers[index].renewal);
+			}
 
-			Background.init();
-			Background.resize( Renderer.width, Renderer.height );
-			Background.setImage( 'bgi_temp.bmp' );
+			if (_previous_server.address != _servers[index].address ||
+			 _previous_server.port != _servers[index].port) {
+				UIManager.removeComponents();
+				Network.close();
 
-			// Need to reload the files.
-			loadFiles(function(){
-				LoginEngine.setLoadedServer( _servers[index] );
-				onReadyLoginServer(index);
-			});
+				Background.init();
+				Background.resize( Renderer.width, Renderer.height );
+				Background.setImage( 'bgi_temp.bmp' );
 
+				// Need to reload the files.
+				loadFiles(function(){
+					LoginEngine.setLoadedServer( _servers[index] );
+					onReadyLoginServer(index);
+				});
+			}
 		} else {
 			onReadyLoginServer(index);
 		}

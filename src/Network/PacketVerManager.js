@@ -303,6 +303,21 @@ define(['Core/Configs', 'Network/PacketLength'], function( Configs, PacketLength
 
 
 	/**
+	 * Reset the renewal flag.
+	 * @param {boolean} new renewal flag.
+	 */
+	function setRenewal(renew) {
+		_RENEWAL = renew;
+	}
+
+	/**
+	 * Get the current renewal flag.
+	 */
+	function getRenewal() {
+		return _RENEWAL;
+	}
+
+	/**
 	 * Export
 	 */
 	return {
@@ -322,6 +337,8 @@ define(['Core/Configs', 'Network/PacketLength'], function( Configs, PacketLength
 
 		// Add support for packet version
 		addSupport:    addSupport,
-		parseCharInfo: parseCharList
+		parseCharInfo: parseCharList,
+		getRenewal: getRenewal,
+		setRenewal: setRenewal
 	};
 });

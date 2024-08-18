@@ -83,6 +83,10 @@ define(function( require )
 		
 		// Renewal switch
 		Session.isRenewal = Configs.get('renewal', false);
+		if (PACKETVER.getRenewal() != server.renewal ||
+		(old_server != null && old_server.renewal != server.renewal)) {
+			PACKETVER.setRenewal(server.renewal);
+		}
 		console.log( "%c[LOGIN] Game Mode: ", "color:#007000", (Session.isRenewal ? 'RENEWAL' : 'PRE-RENEWAL') );
 
 		/// Special thanks to curiosity, siriuswhite and ai4rei. See:

@@ -1,0 +1,206 @@
+#NavigationUIV0 {
+    position: absolute;
+    font-size: 12px;
+    width: 360px;
+}
+
+#NavigationUIV0 .clear {
+    clear: both;
+}
+
+#NavigationUIV0 .titlebar {
+    width: 360px;
+    height: 17px;
+    background-color: white;
+    background-repeat: repeat-x;
+    border-radius: 3px 3px 0px 0px;
+}
+
+#NavigationUIV0 .titlebar .base {
+    width: 11px;
+    height: 11px;
+    border: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+}
+
+#NavigationUIV0 .titlebar .text {
+    text-shadow: 1px 1px white;
+    vertical-align: -2px;
+    white-space: nowrap;
+    /* chrome bug */ display: inline-block;
+    width: 32px;
+    height: 13px;
+}
+
+#NavigationUIV0 .titlebar .left {
+    margin-left: 3px;
+    float: left;
+}
+
+#NavigationUIV0 .titlebar .right {
+    margin-right: 3px;
+    float: right;
+}
+
+#NavigationUIV0 .titlebar .clear {
+    clear: both;
+}
+
+#NavigationUIV0 .panel {
+    background-color: white;
+    width: 360px;
+    height: 160px;
+}
+
+#NavigationUIV0 .panel .right {
+    margin-right: 3px;
+    float: right;
+}
+
+#NavigationUIV0 .panel .txtlabel {
+    position: absolute;
+    text-shadow: 1px 1px white;
+    white-space: nowrap;
+    width: 32px;
+    height: 13px;
+}
+
+#NavigationUIV0 .txtlabel.targetname {
+    top: 46px;
+    right: 318px;
+}
+
+#NavigationUIV0 .txtlabel.targetcoords {
+    top: 88px;
+    right: 260px;
+}
+
+#NavigationUIV0 .txtlabel.ckbscroll {
+    top: 142px;
+    right: 140px;
+}
+
+#NavigationUIV0 .txtlabel.ckbservice {
+    top: 142px;
+    right: 90px;
+}
+
+#NavigationUIV0 .txtlabel.ckbplane {
+    top: 158px;
+    right: 90px;
+}
+
+#NavigationUIV0 .resultbox {
+    position: absolute;
+    top: 42px;
+    right: 6px;
+    width: 217px;
+    height: 95px;
+    text-shadow: 1px 1px white;
+    white-space: nowrap;
+    background-color: lightgrey;
+    border: none;
+    overflow-y: scroll;
+}
+
+#NavigationUIV0 .combobox {
+    width: 76px;
+    height: 18px;
+    right: 277px;
+    top: 20px;
+    position: absolute;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: none;
+}
+
+#NavigationUIV0 .searchbox {
+    width: 229px;
+    height: 16px;
+    right: 41px;
+    top: 20px;
+    position: absolute;
+    border: none;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#NavigationUIV0 .img {
+    position: absolute;
+    border: none;
+    background-color: grey;
+    background-repeat: no-repeat;
+}
+
+#NavigationUIV0 .img.target {
+    width: 128px;
+    height: 128px;
+    top: 42px;
+    right: 225px;
+}
+
+#NavigationUIV0 .img.minimap {
+    width: 64px;
+    height: 64px;
+    top: 102px;
+    right: 229px;
+    background-size: 100% 100%;
+    z-index: +1;
+}
+
+#NavigationUIV0 .panel .btn {
+    border: 0;
+    position: absolute;
+}
+
+#NavigationUIV0 .btn.naviroute {
+    width: 31px;
+    height: 15px;
+    top: 137px;
+    right: 192px;
+}
+
+#NavigationUIV0 .btn.navisyschange {
+    width: 31px;
+    height: 15px;
+    top: 155px;
+    right: 194px;
+}
+
+#NavigationUIV0 .btn.navisearch {
+    width: 33px;
+    height: 18px;
+    right: 6px;
+    top: 20px;
+}
+
+#NavigationUIV0 .btn.navistart {
+    width: 70px;
+    height: 30px;
+    right: 6px;
+    bottom: 6px;
+}
+
+#NavigationUIV0 .ckbox {
+    position: absolute;
+    width: 11px;
+    height: 11px;
+}
+
+#NavigationUIV0 .ckbox.scroll {
+    top: 138px;
+    right: 170px;
+}
+
+#NavigationUIV0 .ckbox.service {
+    top: 138px;
+    right: 120px;
+}
+
+#NavigationUIV0 .ckbox.plane {
+    top: 154px;
+    right: 120px;
+}
+

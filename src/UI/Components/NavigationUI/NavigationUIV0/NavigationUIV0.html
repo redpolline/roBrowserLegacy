@@ -1,0 +1,41 @@
+<div id="NavigationUIV0">
+    <div class="titlebar" data-background="basic_interface/titlebar_mid.bmp">
+        <div class="left">
+            <button class="base" data-background="basic_interface/sys_base_off.bmp" data-hover="basic_interface/sys_base_on.bmp"></button>
+            <span class="text" data-text="2221">Navigation</span>
+        </div>
+        <div class="right">
+            <button class="base mini" data-background="basic_interface/sys_mini_off.bmp" data-hover="basic_interface/sys_mini_on.bmp"></button>
+            <button class="base close" data-background="basic_interface/sys_close_off.bmp" data-hover="basic_interface/sys_close_on.bmp"></button>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <div class="panel">
+        <div class="right">
+            <!-- Top bar. -->
+            <select class="combobox" id="TargetTypes" data-background="navigation_interface3/bg_combo.bmp"></select>
+            <input class="searchbox" data-background="navigation_interface3/bg_search.bmp"></input>
+            <button class="btn navisearch" data-background="navigation_interface/navisearch_a.bmp" data-hover="navigation_interface/navisearch_b.bmp" data-down="navigation_interface/navisearch_c.bmp"></button>
+
+            <!-- NPC / minimap -->
+            <image class="img target" data-background="navigation_interface/interior.bmp" background-color="grey"></image>
+            <span class="txtlabel targetname" data-text="2208">Npc</span>
+            <image class="img minimap" data-background="navigation_interface/noimage.bmp" background-color="grey"></image>
+            <span class="txtlabel targetcoords" data-text="2207">Map</span>
+
+            <!-- Search results list -->
+            <div class="resultbox"></div>
+
+            <!-- Lower right controls. -->
+            <button class="btn naviroute" data-background="navigation_interface/naviroute_a.bmp" data-hover="navigation_interface/naviroute_b.bmp" data-down="navigation_interface/naviroute_c.bmp"></button>
+            <button class="btn navisyschange" data-background="navigation_interface/navisyschange_a.bmp" data-hover="navigation_interface/navisyschange_b.bmp" data-down="navigation_interface/navisyschange_c.bmp"></button>
+            <input type="checkbox" class="ckbox scroll"></input>
+            <span class="txtlabel ckbscroll" data-text="2211">Scroll</span>
+            <input type="checkbox" class="ckbox service"></input>
+            <span class="txtlabel ckbservice" data-text="2213">Service</span>
+            <input type="checkbox" class="ckbox plane"></input>
+            <span class="txtlabel ckbplane" data-text="2215">Plane</span>
+            <button class="btn navistart" data-background="navigation_interface/navistart_a.bmp" data-hover="navigation_interface/navistart_b.bmp" data-down="navigation_interface/navistart_c.bmp"></button>
+        </div>
+    </div>
+</div>

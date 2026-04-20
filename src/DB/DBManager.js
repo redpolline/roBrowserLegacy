@@ -3724,11 +3724,16 @@ async function startLua() {
 		console.log('Loading lua interpreter wasm from ', wasm_uri);
 		Object.assign(options, { customWasmUri: wasm_uri });
 	}
-	lua = await CLua.Lua.create(options);
-	HO_AI = await CLua.Lua.create(options);
-	MER_AI = await CLua.Lua.create(options);
-	default_HO_AI = await CLua.Lua.create(options);
-	default_MER_AI = await CLua.Lua.create(options);
+	try {
+		lua = await CLua.Lua.create(options);
+		HO_AI = await CLua.Lua.create(options);
+		MER_AI = await CLua.Lua.create(options);
+		default_HO_AI = await CLua.Lua.create(options);
+		default_MER_AI = await CLua.Lua.create(options);
+	} catch ({ name, message }) {
+		console.error('Failed loading LUA interpreter wasm. Caught ', name, 'with message ', message);
+		alert('Failed loading LUA interpreter wasm. Reason: ', name, ' ', message);
+	}
 }
 
 function loadFontFromClient(fontPath) {
